@@ -1,0 +1,1 @@
+global.connectionString = 'postgres://admin:root@localhost:5432/todo';
