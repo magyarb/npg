@@ -8,15 +8,25 @@
     <link href="stylesheets/style.css" rel="stylesheet" media="screen">
 </head>
 <body ng-controller="mainController">
-
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=174339549314400";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <div class="container">
 
     <div class="header">
         <h1>Todo App</h1>
         <hr>
         <h1 class="lead">Node + Express + Angular + PostgreSQL</h1>
+        <div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
+        <button class="btn" ng-click="fbLogin()">test</button>
     </div>
-
+    <div id="status">
+    </div>
     <div class="todo-form">
         <form>
             <div class="form-group">
@@ -25,12 +35,11 @@
             <button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="createTodo()">Add Todo</button>
         </form>
     </div>
-
     <br>
 
     <div class="todo-list">
         <ul ng-repeat="todo in todoData">
-            <li><h3><input class="lead" type="checkbox" ng-click="deleteTodo(todo.id)">&nbsp;{{ todo.text }}</li></h3><hr>
+            <li><h3><input class="lead" type="checkbox" ng-click="deleteTodo(todo.id)">&nbsp;{{ todo.text }}</h3></li><hr>
         </ul>
     </div>
 

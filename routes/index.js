@@ -149,5 +149,9 @@ router.delete('/api/v1/todos/:todo_id', function(req, res) {
 router.get('/', function(req, res, next) {
     res.sendFile(path.join(__dirname, '../views', 'index.html'));
 });
+router.get('/f', function(req, res, next) {
+    console.log("asd");
+    res.sendFile(path.join(__dirname, '../views', 'fbtest.html'));
+});
 
 module.exports = router;

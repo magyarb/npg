@@ -3,6 +3,10 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+.fb-login-button {
+  margin-bottom: 10px;
+}
+
 a {
   color: #00B7FF;
 }
